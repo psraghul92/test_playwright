@@ -18,9 +18,9 @@ test.beforeAll(async ({ browser }) => {
     await page.goBack();
   });
 
-//   test.afterAll(async({browser})=> {
-//     browser.close()
-//   });
+  test.afterAll(async({browser})=> {
+    browser.close()
+  });
 
   test('Validate if checkbox can be checked', async ({ page }) => {
     await checkboxes.uncheckCheckbox(2)
