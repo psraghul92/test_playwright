@@ -22,18 +22,17 @@ test.beforeAll(async ({ browser }) => {
 //     browser.close()
 //   })
 
-  test('Validate if right click is performed', async ({ page }) => {
-      contextmenu.clickRightclickArea()
+  test('Validate if right click is performed', async ({ }) => {
+      await page.click(contextmenu.hotspot, { button: 'right',delay: 2 });
       let alertPresent = false;
       page.on('dialog', async dialog => {
         console.log(`Dialog detected with message: ${dialog.message()}`);
         alertPresent = true; // Set the flag to true if a dialog is detected
         await dialog.accept(); // Accept the dialog to continue
-      });
-      if (alertPresent) {
-        console.log('Alert was present.');
-      } else {
-        console.log('No alert detected.');
-      }
+        if (alertPresent) {
+          console.log('Alert was present.');
+        } else {
+          console.log('No alert detected.');
+        }});
   });
   
