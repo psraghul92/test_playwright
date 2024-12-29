@@ -23,7 +23,7 @@ test.afterAll(async({browser})=> {
   browser.close()
 })
 
-test('Validate if an element can be added', async ({ }) => {
+test('Validate if horizontal slider can dragged', async ({ }) => {
     await page.click(horizontalSliderPage.horizontalSliderContainer)
     for (let i=0;i<=2; i = i+0.5){
         await page.keyboard.press('ArrowLeft')

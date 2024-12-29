@@ -23,7 +23,7 @@ test.afterAll(async({browser})=> {
   browser.close()
 })
 
-test('Validate if an element can be added', async ({ }) => {
+test('Validate if a number can type in textbox', async ({ }) => {
     await page.click(inputNumberPage.inputTextBox)
     await page.keyboard.type('1')
   });
